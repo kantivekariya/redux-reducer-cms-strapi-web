@@ -2,10 +2,14 @@
   "defaultConnection": "default",
   "connections": {
     "default": {
-      "connector": "bookshelf",
+      "connector": "mongoose",
       "settings": {
-        "client": "sqlite",
-        "filename": ".tmp/data.db"
+        "client": "mongo",
+        "host": "localhost",
+        "port": 27017,
+        "database": "my_website",
+        "username": "",
+        "password": ""
       },
       "options": {
         "useNullAsDefault": true
