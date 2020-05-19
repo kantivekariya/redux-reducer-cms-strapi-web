@@ -1,5 +1,5 @@
-import axios from 'axios';
-import config from '../_config/Config';
+import axios from "axios";
+import config from "../_config/Config";
 
 export function setupAxios() {
   axios.defaults.timeout = config.TIMEOUT;
@@ -10,19 +10,19 @@ export function setupAxios() {
 
 const onRequestSuccess = (response) => {
   // Do something before request is sent
-  console.debug('Axios onRequestSuccess', response);
+  console.debug("Axios onRequestSuccess", response);
   return response;
 };
 
 const onRequestError = (error) => {
   // Do something with request error
-  console.debug('Axios onRequestError', error);
+  console.debug("Axios onRequestError", error);
   return Promise.reject(error);
 };
 
 const onResponseSuccess = (response) => {
   // Do something with response data
-  console.debug('Axios onResponseSuccess', response);
+  console.debug("Axios onResponseSuccess", response);
   //   if (response) {
   //     return response.data;
   //   }
@@ -31,6 +31,6 @@ const onResponseSuccess = (response) => {
 
 const onResponseError = (error) => {
   // Do something with response error
-  console.debug('Axios onResponseError', error.response);
+  console.debug("Axios onResponseError", error.response);
   return Promise.reject(error);
 };
