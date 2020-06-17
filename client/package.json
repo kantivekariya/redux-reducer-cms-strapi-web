@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
+    "html-react-parser": "^0.13.0",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -23,7 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --write \"src/**/*.+(js|jsx|json|scss|css|md)\""
+    "format": "prettier --write \"src/**/*.+(js|jsx|json|scss|css|md)\"",
+    "css:build": "lessc --js --x src/App.less src/antd.css"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "less": "^3.10.3",
     "prettier": "^2.0.5",
     "redux-immutable-state-invariant": "^2.1.0"
   }

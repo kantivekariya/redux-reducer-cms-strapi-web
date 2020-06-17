@@ -15,7 +15,7 @@ export const blogReducer = (draft = initialState, action) => {
         ...draft,
         blogs: {
           ...draft.blogs,
-          data: action.payload,
+          ...action.payload,
         },
       };
     case types.BLOG_LIST_FAILURE:

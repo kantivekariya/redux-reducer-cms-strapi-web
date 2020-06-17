@@ -3,7 +3,7 @@ const dev = {
 };
 
 const prod = {
-  BASE_URL: "",
+  BASE_URL: "https://api.spacexdata.com/v3",
 };
 const config = process.env.NODE_ENV === "production" ? prod : dev;
 

@@ -1,0 +1,17 @@
+@import "~bootstrap/scss/bootstrap";
+@import "../src/assets/scss/bootstrap/variables";
+@import "../src/assets/scss/bootstrap/mixins";
+@import "../src/assets/scss/bootstrap/functions";
+@import "../src/assets/scss/site-base";
+@import "../src/assets/scss/site-blocks";
+@import "../src/assets/scss/site-navbar";
+
+.blog-title {
+    overflow: hidden;
+    height: 100px;
+}
+.blog-contain {
+    overflow: hidden;
+    min-height: 140px !important;
+    max-height: 140px !important;
+}

@@ -1,14 +1,12 @@
 import axios from "axios";
 import * as types from "./actionTypes";
-import config from "../../_config";
+import config from "../../_config/Config";
 
-export function getAllBlogs(filters = {}) {
+export function getAllBlogs() {
   return async (dispatch) => {
     dispatch({ type: types.BLOG_LIST_REQUEST });
     try {
-      const res = await axios.get(`${config.BASE_URL}/blogs`, {
-        params: params,
-      });
+      const res = await axios.get(`${config.BASE_URL}/blog-posts`);
       dispatch({ type: types.BLOG_LIST_SUCCESS, payload: res });
       return res;
     } catch (error) {

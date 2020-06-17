@@ -5,7 +5,7 @@ import { AppRoute } from "./_routes";
 import configureStore from "./redux/store/configureStore";
 import { setupAxios } from "./util/axios-config";
 
-import "./App.css";
+import "./App.scss";
 
 const store = configureStore();
 setupAxios();
