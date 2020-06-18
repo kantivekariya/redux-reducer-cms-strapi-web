@@ -1,4 +1,5 @@
-"use strict";
+// const slugify = require('slugify');
+'use strict';
 
 /**
  * Lifecycle callbacks for the `blog-post` model.
@@ -7,7 +8,11 @@
 module.exports = {
   // Before saving a value.
   // Fired before an `insert` or `update` query.
-  // beforeSave: async (model, attrs, options) => {},
+  beforeSave: async model => {
+    if (model.title) {
+      model.set('slug', slugify(model.title, { lower: true }));
+    }
+  },
   // After saving a value.
   // Fired after an `insert` or `update` query.
   // afterSave: async (model, response, options) => {},

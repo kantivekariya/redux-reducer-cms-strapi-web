@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "Picture": {
+    "picture": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [
@@ -17,7 +17,7 @@
       "plugin": "upload",
       "required": false
     },
-    "Caption": {
+    "caption": {
       "type": "string"
     }
   }

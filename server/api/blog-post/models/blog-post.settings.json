@@ -9,10 +9,10 @@
     "timestamps": true
   },
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Cover": {
+    "cover": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -27,7 +27,7 @@
       "plugin": "users-permissions",
       "collection": "user"
     },
-    "Content": {
+    "content": {
       "type": "dynamiczone",
       "components": [
         "blog.quote",
@@ -42,6 +42,10 @@
     },
     "category": {
       "model": "category"
+    },
+    "slug": {
+      "type": "string",
+      "unique": true
     }
   }
 }

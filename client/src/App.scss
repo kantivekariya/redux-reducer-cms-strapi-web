@@ -1,4 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
+@import "../src/assets/fonts/icomoon/style.css";
+@import "../src/assets/scss/jquery-ui.css";
+@import "../src/assets/scss/magnific-popup.css";
+@import "../src/assets/scss/mediaelementplayer.css";
+@import "../src/assets/scss/owl.carousel.min.css";
+@import "../src/assets/scss/owl.theme.default.min.css";
+@import "../src/assets/fonts/flaticon/font/flaticon.css";
+@import "../src/assets/scss/aos.css";
 @import "../src/assets/scss/bootstrap/variables";
 @import "../src/assets/scss/bootstrap/mixins";
 @import "../src/assets/scss/bootstrap/functions";
@@ -7,11 +15,11 @@
 @import "../src/assets/scss/site-navbar";
 
 .blog-title {
-    overflow: hidden;
-    height: 100px;
+  overflow: hidden;
+  height: 100px;
 }
 .blog-contain {
-    overflow: hidden;
-    min-height: 140px !important;
-    max-height: 140px !important;
+  overflow: hidden;
+  min-height: 140px !important;
+  max-height: 140px !important;
 }
