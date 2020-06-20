@@ -12,7 +12,9 @@
         "username": "kantivekariya",
         "password": "kanti@albiorix"
       },
-      "options": {}
+      "options": {
+        "ssl": true
+      }
     }
   }
 }

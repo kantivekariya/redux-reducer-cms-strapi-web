@@ -42,10 +42,6 @@
     },
     "category": {
       "model": "category"
-    },
-    "slug": {
-      "type": "string",
-      "unique": true
     }
   }
 }

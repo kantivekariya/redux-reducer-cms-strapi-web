@@ -48,16 +48,16 @@ const Home = (props) => {
                 blogs.data.map((value, index) => (
                   <div className="col-lg-4 mb-4" key={index}>
                     <div className="entry2">
-                      <Link to={`${window.location.pathname}`}><img src={value && value.Cover && value.Cover.url} alt="blog" className="img-fluid rounded" /></Link>
+                      <Link to={`${window.location.pathname}`}><img src={value && value.cover && value.cover.url} alt="blog" className="img-fluid rounded" /></Link>
                       <div className="excerpt">
                         <span className="post-category text-white bg-secondary mb-3">Politics</span>
-                        <h2 className="blog-title"><Link to={`${window.location.pathname}`}>{value && value.Title && <>{parse(value.Title)}</>}</Link></h2>
+                        <h2 className="blog-title"><Link to={`${window.location.pathname}`}>{value && value.title && <>{parse(value.title)}</>}</Link></h2>
                         <div className="post-meta align-items-center text-left clearfix">
                           <figure className="author-figure mb-0 mr-3 float-left"><img src={require(`../../assets/img/person_1.jpg`)} alt="user" className="img-fluid" /></figure>
                           <span className="d-inline-block mt-1">By <Link to={`${window.location.pathname}`}>Carrol Atkinson</Link></span>
                           <span>&nbsp;-&nbsp; July 19, 2019</span>
                         </div>
-                        <div className="blog-contain">{value && value.Content && value.Content[0] && value.Content[0].Rich_text && <>{parse(value.Content[0].Rich_text)}</>}</div>
+                        <div className="blog-contain">{value && value.content && value.content[0] && value.content[0].Rich_text && <>{parse(value.content[0].Rich_text)}</>}</div>
                         <p><Link to={`${window.location.pathname}`}>Read More</Link></p>
                       </div>
                     </div>

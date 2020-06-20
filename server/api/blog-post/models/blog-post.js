@@ -1,4 +1,3 @@
-// const slugify = require('slugify');
 'use strict';
 
 /**
@@ -8,14 +7,19 @@
 module.exports = {
   // Before saving a value.
   // Fired before an `insert` or `update` query.
-  beforeSave: async model => {
-    if (model.title) {
-      model.set('slug', slugify(model.title, { lower: true }));
-    }
-  },
+  // beforeSave: async (model, response) => {
+  //   console.log("response", )
+  //   if (model.title) {
+  //     model.set('slug', slugify(model.title, { lower: true }));
+  //   }
+  // },
   // After saving a value.
   // Fired after an `insert` or `update` query.
-  // afterSave: async (model, response, options) => {},
+  // afterSave: async (model, response, options) => {
+  //   if (model.title) {
+  //     model.set('slug', slugify(model.title, { lower: true }));
+  //   }
+  // },
   // Before fetching a value.
   // Fired before a `fetch` operation.
   // beforeFetch: async (model, columns, options) => {},
