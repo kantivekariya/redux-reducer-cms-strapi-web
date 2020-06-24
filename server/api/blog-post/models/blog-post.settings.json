@@ -43,6 +43,17 @@
     },
     "category": {
       "model": "category"
+    },
+    "profile_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
     }
   }
 }

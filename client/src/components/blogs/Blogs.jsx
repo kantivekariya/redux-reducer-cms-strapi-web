@@ -1,37 +1,57 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import parse from 'html-react-parser';
+import moment from 'moment';
 import Header from "../../common/header/Header";
+import { useDispatch, useSelector } from "react-redux";
 import Footer from "../../common/footer/Footer";
+import { getBlogsById, getPopular } from "../../redux/action/blogAction";
+import config from "../../_config/Config";
 
-const Blogs = () => {
+const Blogs = (props) => {
+  console.log("param", props)
+  const { BlogsId } = props.match.params
+  const isFirstRender = useRef(true);
+  const dispatch = useDispatch();
+  const blogs_details = useSelector((state) => state.blogReducer.blogs_details);
+  console.log("blogs_details", blogs_details)
+  useEffect(() => {
+    if (isFirstRender.current) {
+      dispatch(getBlogsById(BlogsId)).then((res) => { });
+      // dispatch(getPopular()).then((res) => { });
+    }
+  }, [dispatch]);
+
   return (
     <>
       <div className="site-wrap">
         <Header />
-        <div className="site-cover site-cover-sm same-height overlay single-page">
-          <div className="container">
-            <div className="row same-height justify-content-center">
-              <div className="col-md-12 col-lg-10">
-                <div className="post-entry text-center">
-                  <span className="post-category text-white bg-success mb-3">Nature</span>
-                  <h1 className="mb-4">The AI magically removes moving objects from videos.</h1>
-                  <div className="post-meta align-items-center text-center">
-                    <figure className="author-figure mb-0 mr-3 d-inline-block"><img src={require(`../../assets/img/person_1.jpg`)} alt="img_1" className="img-fluid" /></figure>
-                    <span className="d-inline-block mt-1">By Carrol Atkinson</span>
-                    <span>&nbsp;-&nbsp; February 10, 2019</span>
+        {blogs_details && blogs_details.data && (
+          <div className="site-cover site-cover-sm same-height overlay single-page" style={{backgroundImage: `url(${config.BASE_URL}${blogs_details && blogs_details.data && blogs_details.data.cover && blogs_details.data.cover.url})`}}>
+            <div className="container">
+              <div className="row same-height justify-content-center">
+                <div className="col-md-12 col-lg-10">
+                  <div className="post-entry text-center">
+                    <span className="post-category text-white bg-success mb-3">{blogs_details && blogs_details.data && blogs_details.data.category && blogs_details.data.category.category}</span>
+                    <h1 className="mb-4">{blogs_details && blogs_details.data && blogs_details.data.title && blogs_details.data.title}</h1>
+                    <div className="post-meta align-items-center text-center">
+                      <figure className="author-figure mb-0 mr-3 d-inline-block"><img src={`${config.BASE_URL}${blogs_details && blogs_details.data && blogs_details.data.profile_image && blogs_details.data.profile_image.url && blogs_details.data.profile_image.url}`} alt="img_1" className="img-fluid" /></figure>
+                      <span className="d-inline-block mt-1">By {blogs_details && blogs_details.data.author && blogs_details.data.author[0] && blogs_details.data.author[0].username}</span>
+                      <span>&nbsp;-&nbsp; {moment(blogs_details && blogs_details.createdAt).format('MMMM DD, YYYY')}</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
 
         <section className="site-section py-lg">
           <div className="container">
             <div className="row blog-entries element-animate">
               <div className="col-md-12 col-lg-8 main-content">
                 <div className="post-content-body">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium nam quas inventore, ut iure iste modi eos adipisci ad ea itaque labore earum autem nobis et numquam, minima eius. Nam eius, non unde ut aut sunt eveniet rerum repellendus porro.</p>
+                  <div>{blogs_details && blogs_details.data && blogs_details.data.content && blogs_details.data.content[0] && blogs_details.data.content[0].Rich_text && parse(blogs_details.data.content[0].Rich_text)}</div>
                 </div>
               </div>
               <div className="col-md-12 col-lg-4 sidebar">
