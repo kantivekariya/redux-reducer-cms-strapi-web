@@ -18,6 +18,7 @@
   "dependencies": {
     "ckeditor4-react": "^1.0.1",
     "cross-env": "^6.0.3",
+    "dotenv": "^8.2.0",
     "draftjs-to-html": "^0.9.1",
     "jquery": "^3.4.1",
     "multer-sharp": "^0.6.1",

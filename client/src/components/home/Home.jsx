@@ -5,6 +5,7 @@ import { getAllBlogs } from "../../redux/action/blogAction";
 import { Link } from "react-router-dom";
 import Header from "../../common/header/Header";
 import Footer from "../../common/footer/Footer";
+import config from "../../_config/Config";
 
 const Home = (props) => {
   const blogs = useSelector((state) => state.blogReducer.blogs);
@@ -48,7 +49,7 @@ const Home = (props) => {
                 blogs.data.map((value, index) => (
                   <div className="col-lg-4 mb-4" key={index}>
                     <div className="entry2">
-                      <Link to={`${window.location.pathname}`}><img src={value && value.cover && value.cover.url} alt="blog" className="img-fluid rounded" /></Link>
+                      <Link to={`${window.location.pathname}`}><img src={`${config.BASE_URL}${value && value.cover && value.cover.url}`} alt="blog" className="img-fluid rounded" /></Link>
                       <div className="excerpt">
                         <span className="post-category text-white bg-secondary mb-3">Politics</span>
                         <h2 className="blog-title"><Link to={`${window.location.pathname}`}>{value && value.title && <>{parse(value.title)}</>}</Link></h2>
