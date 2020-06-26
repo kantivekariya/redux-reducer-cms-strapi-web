@@ -5,9 +5,8 @@ const dev = {
 const prod = {
   BASE_URL: "https://strapi-serve.herokuapp.com",
 };
-const config = process.env.NODE_ENV === "production" ? prod : dev;
+const config = process.env.NODE_ENV === "production" ? prod : prod;
 
 export default {
- 
   ...config,
 };

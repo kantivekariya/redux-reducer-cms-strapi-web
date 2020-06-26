@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+@import "../src/assets/scss/suspense-loader.scss";
 @import "../src/assets/fonts/icomoon/style.css";
 @import "../src/assets/scss/jquery-ui.css";
 @import "../src/assets/scss/magnific-popup.css";
@@ -22,4 +23,25 @@
   overflow: hidden;
   min-height: 140px !important;
   max-height: 140px !important;
+}
+
+.ajax-global-spin {
+  .ant-spin {
+    height: 100vh !important;
+    max-height: unset !important;
+  }
+}
+
+.ajax-global-spin {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.4);
 }

@@ -5,8 +5,8 @@ const initialState = {
     data: [],
   },
   blogs_details: {
-    data: []
-  }
+    data: [],
+  },
 };
 
 export const blogReducer = (draft = initialState, action) => {
